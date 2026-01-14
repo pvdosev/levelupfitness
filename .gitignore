@@ -1,0 +1,9 @@
+# OS / junk
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Secrets / env (if any)
+.env
