@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Level Up Fitness</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
 <body>
-    <title>Level Up Fitness</title>
-    <h1>Level Up Fitness</h1>
-    <p>This is a sample paragraph to demonstrate a basic HTML structure.</p>
+    <div class="logo">
+        <img src="levelupfitnesslogo.png" alt="Level Up Fitness Logo" width="200" height="200">
+        <aside class = "sidebar">
+            <h2>Dashboard</h2>
+            <button class = "dropdown-btn" id = "menuBtn">
+                ☰ Menu
+            </button>
+            <div class = "dropdown" id = "menu">
+                <a class ="active" href = "#">Home</a>
+                <a href = "#">Workouts</a>
+                <a href = "#">Nutrition</a>
+                <a href = "#">Progress</a>
+                <a href = "#">Settings</a>
+            </div>
+
+            <script>
+                const btn = document.getElementById("menuBtn");
+                const menu = document.getElementById("menu");
+                btn.addEventListener("click", () => {
+                    menu.classList.toggle("open");
+                });
+            </script>
+        </aside>
+        
+        <main class = "content">
+            <header class = "topbar">
+                <h1>Overview</h1>
+            </header>
+
+            <section class = "placeholder">
+                <p>Place holder</p>
+            </section>
+        </main>
+    </div>    
 </body>
 </html>
