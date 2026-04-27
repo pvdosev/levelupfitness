@@ -1,3 +1,4 @@
+/* Global Style */
 *{
     box-sizing: border-box;
     margin: 0;
@@ -8,12 +9,75 @@ body{
     background: #f4f6fb
 }
 
+/* Web Layout */
 .app{
     display: grid;
     grid-template-columns: 220px 1fr;
     min-height: 100vh;
 }
 
+/* Login Screen */
+.hidden{
+    display:;
+}
+
+.login-screen{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6099e8, #e5b2a2);
+}
+
+.login-card{
+    width: 340px;
+    padding: 30px;
+    border-radius: 16px;
+    background: white;
+    text-align: center;
+    box-shadow: 0 9px 20px rgba(0, 0, 0, 0.15);
+}
+
+.login-card h1{
+    margin-bottom: 8px;
+    color: #6686c6
+}
+
+.login-card p{
+    margin-bottom: 16px;
+    color: #5a6b8d;
+}
+
+.login-card input{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.login-card button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6099e8;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.login-card button:hover{
+    background: #4a7ac1;
+}
+
+#loginError{
+    margin-top: 12px;
+    color: #5a6b8d;
+    font-weight: 500;
+}
+
+/* Sidebar Styles */
 .sidebar{
     background: #6099e8;
     color: white;
@@ -45,6 +109,7 @@ body{
     margin-bottom: 20px
 }
 
+/* Dropdown Menu Layout */
 .dropdown-btn {
     width: 100%;
     padding: 5px;
@@ -70,4 +135,132 @@ body{
 
 .dropdown.open{
     display: flex;
+}
+
+/* Stats Style */
+.stats-center{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.stats-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+
+    width: min(500px, 90%);
+    padding: 18px;
+
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.stat{
+    flex: 1;
+    text-align: left;
+    padding: 5px;
+    background: #f1f5f9
+}
+
+.stat-value{
+    font-size: 16px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+/* Experience Bar Styles */
+.exp-container{
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.exp-card{
+    width: min(500px, 90%);
+    padding: 18px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.exp-content{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.exp-level{
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.exp-label{
+    font-weight: 600;
+    color: #111827;
+}
+
+.exp-number{
+    font-size: 24px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.exp-text{
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.exp-bar{
+    position: relative;
+    height: 12px;
+    border-radius: 999px;
+    background: #e0e7ff;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.exp-bar::before{
+    content: "";
+    position: absolute;
+    inset: -30px;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(56,189,248,0.8), transparent 35%),
+        radial-gradient(circle at 60% 40%, rgba(59,130,246,0.7), transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(34,211,238,0.6), transparent 35%),
+        linear-gradient(90deg, #1e3a8a, #2563eb, #38bdf8);
+    filter: blur(12px);
+    animation: auroraMove 6s ease-in-out infinite alternate;
+    z-index: 0;   
+}
+
+.exp-progress{
+    position: relative;
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    background: #6366f1;
+    backdrop-filter: blur(4px);
+    transition: width 400ms ease;
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes auroraMove{
+    0%{
+        transform: translateX(-20px) scale(1.1);
+    }
+
+    50%{
+        transform: translateX(20px) scale(1.2);
+    }
+
+    100%{
+        transform: translateX(-10px) scale(1.15);
+    }
 }

@@ -7,28 +7,40 @@
         <link rel="stylesheet" href="style.css">
     </head>
 <body>
-    <div class="logo">
+    <!-- Simple Login -->
+     <div class = "login-screen" id = "loginScreen">
+        <div class = "login-card">
+            <img src = "levelupfitnesslogo.png" width = "150">
+
+            <h1> Level Up Fitness</h1>
+            <p> Login to Continue</p>
+
+            <input type = "text" id = "username" placeholder = "Username">
+            <input type = "password" id = "password" placeholder = "Password">
+
+            <button id = "loginBtn">Login</button>
+
+            <p id = "loginError"></p>
+        </div>
+     </div>
+
+    <!-- Dashboard-->
+    <div class = "logo hidden" id = "dashboard">
         <img src="levelupfitnesslogo.png" alt="Level Up Fitness Logo" width="200" height="200">
         <aside class = "sidebar">
             <h2>Dashboard</h2>
+            <!-- Dropdown Menu -->
             <button class = "dropdown-btn" id = "menuBtn">
                 ☰ Menu
             </button>
             <div class = "dropdown" id = "menu">
-                <a class ="active" href = "#">Home</a>
-                <a href = "#">Workouts</a>
-                <a href = "#">Nutrition</a>
-                <a href = "#">Progress</a>
-                <a href = "#">Settings</a>
+                <a class ="active" href = "Level Up Fitness Proj.html">Home</a>
+                <a href = "workouts.html">Workouts</a>
+                <a href = "nutrition.html">Nutrition</a>
+                <a href = "progress.html">Progress</a>
+                <a href = "personalize.html">Personalize</a>
+                <a href = "settings.html">Settings</a>
             </div>
-
-            <script>
-                const btn = document.getElementById("menuBtn");
-                const menu = document.getElementById("menu");
-                btn.addEventListener("click", () => {
-                    menu.classList.toggle("open");
-                });
-            </script>
         </aside>
         
         <main class = "content">
@@ -36,10 +48,62 @@
                 <h1>Overview</h1>
             </header>
 
+            <!-- Stats Section -->
+            <section class = "stats-center">
+                <div class = "stats-card">
+                    
+                    <div class = "stat">
+                        <span class = "stat-name">STR</span>
+                        <span class = "stat-value" id = "strValue">0</span>
+                    </div>
+
+                    <div class = "stat">
+                        <span class = "stat-name">END</span>
+                        <span class = "stat-value" id = "endValue">0</span>
+                    </div> 
+
+                    <div class = "stat">
+                        <span class = "stat-name">AGI</span>
+                        <span class = "stat-value" id = "agiValue">0</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Experience Bar Section -->
+            <section class = "exp-container">
+                <div class = "exp-card">
+                    <div class = "exp-content">
+                        <div class = "exp-level">
+                            <span class = "exp-label">Level</span>
+                            <span class = "exp-number" id = "levelNum">0</span>
+                        </div>
+
+                        <div class = "exp-text">
+                            <span id = "expText"> 0 / 100</span>
+                        </div>
+                    </div>
+
+                    <div class = "exp-bar" 
+                        role = "progressbar" 
+                        aria-valuenow = "0" 
+                        aria-valuemin = "0" 
+                        aria-valuemax = "100">
+                        <div class = "exp-progress" id = "expBar" style = "width: 0%;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <script src = "expScript.js"></script>
+
             <section class = "placeholder">
                 <p>Place holder</p>
             </section>
         </main>
     </div>    
+
+    <script src = "script.js"></script>
+    <script src = "expScript.js"></script>
+
 </body>
 </html>
