@@ -1,32 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Level Up Fitness</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workouts | Level Up Fitness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-
-    <div class = "logo " id = "dashboard">
-        <img src="levelupfitnesslogo.png" alt="Level Up Fitness Logo" width="200" height="200">
-        <aside class = "sidebar">
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand-mark">LU</div>
             <h2>Workouts</h2>
-            <!-- Dropdown Menu -->
-            <button class = "dropdown-btn" id = "menuBtn">
-                ☰ Menu
-            </button>
-            <div class = "dropdown" id = "menu">
-                <a href = "Level Up Fitness Proj.html">Home</a>
-                <a class ="active" href = "workouts.html">Workouts</a>
-                <a href = "nutrition.html">Nutrition</a>
-                <a href = "progress.html">Progress</a>
-                <a href = "settings.html">Settings</a>
-            </div>
+            <nav class="dropdown">
+                <a href="Level Up Fitness Proj.html">Home</a>
+                <a class="active" href="workouts.html">Workouts</a>
+                <a href="nutrition.html">Nutrition</a>
+                <a href="progress.html">Progress</a>
+                <a href="personalize.html">Personalize</a>
+                <a href="settings.html">Settings</a>
+            </nav>
         </aside>
+
+        <main class="content">
+            <header class="topbar">
+                <div class="page-title">
+                    <p class="eyebrow">New Entry</p>
+                    <h1>Workout Log</h1>
+                </div>
+                <div class="hunter-card">
+                    <span id="rankBadge">E-Rank</span>
+                    <strong id="hunterName">Hunter</strong>
+                </div>
+            </header>
+
+            <section class="card-grid">
+                <form class="system-panel" id="workoutForm">
+                    <div class="section-title">
+                        <p class="eyebrow">Complete Training</p>
+                        <h2>Add Workout</h2>
+                    </div>
+                    <label>
+                        Exercise
+                        <input id="exerciseInput" type="text" placeholder="Push day, run, cycling" required>
+                    </label>
+                    <div class="form-grid two">
+                        <label>
+                            Minutes
+                            <input id="minutesInput" type="number" min="1" max="360" value="30" required>
+                        </label>
+                        <label>
+                            Calories
+                            <input id="caloriesInput" type="number" min="0" max="3000" value="180">
+                        </label>
+                    </div>
+                    <label>
+                        Intensity
+                        <select id="intensityInput">
+                            <option value="light">Light</option>
+                            <option value="normal" selected>Normal</option>
+                            <option value="hard">Hard</option>
+                            <option value="boss">Boss Fight</option>
+                        </select>
+                    </label>
+                    <button class="primary-btn" type="submit">Complete Workout</button>
+                </form>
+
+                <section class="system-panel">
+                    <div class="section-title">
+                        <p class="eyebrow">Archive</p>
+                        <h2>Completed</h2>
+                    </div>
+                    <div class="timeline" id="workoutHistory"></div>
+                </section>
+            </section>
+        </main>
     </div>
 
-    <script src = "script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>

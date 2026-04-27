@@ -1,109 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Level Up Fitness</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Up Fitness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <!-- Simple Login -->
-     <div class = "login-screen" id = "loginScreen">
-        <div class = "login-card">
-            <img src = "levelupfitnesslogo.png" width = "150">
-
-            <h1> Level Up Fitness</h1>
-            <p> Login to Continue</p>
-
-            <input type = "text" id = "username" placeholder = "Username">
-            <input type = "password" id = "password" placeholder = "Password">
-
-            <button id = "loginBtn">Login</button>
-
-            <p id = "loginError"></p>
+    <div class="login-screen" id="loginScreen">
+        <div class="login-card">
+            <div class="brand-mark">LU</div>
+            <h1>Level Up Fitness</h1>
+            <p>Enter your hunter name to continue.</p>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password optional">
+            <button class="primary-btn" id="loginBtn">Login</button>
+            <p id="loginError"></p>
         </div>
-     </div>
+    </div>
 
-    <!-- Dashboard-->
-    <div class = "logo hidden" id = "dashboard">
-        <img src="levelupfitnesslogo.png" alt="Level Up Fitness Logo" width="200" height="200">
-        <aside class = "sidebar">
+    <div class="app hidden" id="app">
+        <aside class="sidebar">
+            <div class="brand-mark">LU</div>
             <h2>Dashboard</h2>
-            <!-- Dropdown Menu -->
-            <button class = "dropdown-btn" id = "menuBtn">
-                ☰ Menu
-            </button>
-            <div class = "dropdown" id = "menu">
-                <a class ="active" href = "Level Up Fitness Proj.html">Home</a>
-                <a href = "workouts.html">Workouts</a>
-                <a href = "nutrition.html">Nutrition</a>
-                <a href = "progress.html">Progress</a>
-                <a href = "personalize.html">Personalize</a>
-                <a href = "settings.html">Settings</a>
-            </div>
+            <nav class="dropdown">
+                <a class="active" href="Level Up Fitness Proj.html">Home</a>
+                <a href="workouts.html">Workouts</a>
+                <a href="nutrition.html">Nutrition</a>
+                <a href="progress.html">Progress</a>
+                <a href="personalize.html">Personalize</a>
+                <a href="settings.html">Settings</a>
+            </nav>
         </aside>
-        
-        <main class = "content">
-            <header class = "topbar">
-                <h1>Overview</h1>
+
+        <main class="content">
+            <header class="topbar">
+                <div class="page-title">
+                    <p class="eyebrow">System Interface</p>
+                    <h1>Level Up Fitness</h1>
+                </div>
+                <div class="hunter-card">
+                    <span id="rankBadge">E-Rank</span>
+                    <strong id="hunterName">Hunter</strong>
+                </div>
             </header>
 
-            <!-- Stats Section -->
-            <section class = "stats-center">
-                <div class = "stats-card">
-                    
-                    <div class = "stat">
-                        <span class = "stat-name">STR</span>
-                        <span class = "stat-value" id = "strValue">0</span>
+            <section class="system-panel hero-panel">
+                <div>
+                    <p class="eyebrow">Daily Quest Arrived</p>
+                    <h2 class="hero-title">Train to become stronger.</h2>
+                    <p class="muted">Complete workouts, clear checklist goals, earn XP, and raise your rank.</p>
+                    <div class="button-row">
+                        <a class="primary-btn" href="workouts.html">Add Workout</a>
+                        <button class="ghost-btn" id="resetDaily">Reset Daily</button>
                     </div>
-
-                    <div class = "stat">
-                        <span class = "stat-name">END</span>
-                        <span class = "stat-value" id = "endValue">0</span>
-                    </div> 
-
-                    <div class = "stat">
-                        <span class = "stat-name">AGI</span>
-                        <span class = "stat-value" id = "agiValue">0</span>
-                    </div>
-
                 </div>
-            </section>
 
-            <!-- Experience Bar Section -->
-            <section class = "exp-container">
-                <div class = "exp-card">
-                    <div class = "exp-content">
-                        <div class = "exp-level">
-                            <span class = "exp-label">Level</span>
-                            <span class = "exp-number" id = "levelNum">0</span>
-                        </div>
-
-                        <div class = "exp-text">
-                            <span id = "expText"> 0 / 100</span>
-                        </div>
+                <div class="level-core">
+                    <div class="level-ring">
+                        <span class="exp-label">Level</span>
+                        <span class="exp-number" id="levelNum">1</span>
                     </div>
-
-                    <div class = "exp-bar" 
-                        role = "progressbar" 
-                        aria-valuenow = "0" 
-                        aria-valuemin = "0" 
-                        aria-valuemax = "100">
-                        <div class = "exp-progress" id = "expBar" style = "width: 0%;"></div>
+                    <div class="exp-card">
+                        <div class="exp-content">
+                            <span>Experience</span>
+                            <span id="expText">0 / 100 XP</span>
+                        </div>
+                        <div class="exp-bar"><div class="exp-progress" id="expBar"></div></div>
                     </div>
                 </div>
             </section>
 
-            <script src = "expScript.js"></script>
+            <section class="metric-grid">
+                <article class="system-panel metric">
+                    <p class="muted">Total XP</p>
+                    <strong id="totalXp">0</strong>
+                </article>
+                <article class="system-panel metric">
+                    <p class="muted">Streak</p>
+                    <strong id="streakCount">0 days</strong>
+                </article>
+                <article class="system-panel metric">
+                    <p class="muted">Workouts</p>
+                    <strong id="workoutCount">0</strong>
+                </article>
+                <article class="system-panel metric">
+                    <p class="muted">Calories</p>
+                    <strong id="calorieCount">0</strong>
+                </article>
+            </section>
 
-            <section class = "placeholder">
-                <p>Place holder</p>
+            <section class="card-grid">
+                <article class="system-panel">
+                    <div class="section-title">
+                        <p class="eyebrow">Quest Board</p>
+                        <h2>Today</h2>
+                    </div>
+                    <div class="quest-list" id="questPreview"></div>
+                </article>
+                <article class="system-panel">
+                    <div class="section-title">
+                        <p class="eyebrow">Recent Activity</p>
+                        <h2>Workout Log</h2>
+                    </div>
+                    <div class="timeline" id="recentWorkouts"></div>
+                </article>
             </section>
         </main>
-    </div>    
+    </div>
 
-    <script src = "script.js"></script>
-    <script src = "expScript.js"></script>
-
+    <script src="script.js"></script>
+    <script src="expScript.js"></script>
 </body>
 </html>

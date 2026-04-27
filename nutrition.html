@@ -1,32 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Level Up Fitness</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition | Level Up Fitness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-
-    <div class = "logo " id = "dashboard">
-        <img src="levelupfitnesslogo.png" alt="Level Up Fitness Logo" width="200" height="200">
-        <aside class = "sidebar">
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand-mark">LU</div>
             <h2>Nutrition</h2>
-            <!-- Dropdown Menu -->
-            <button class = "dropdown-btn" id = "menuBtn">
-                ☰ Menu
-            </button>
-            <div class = "dropdown" id = "menu">
-                <a href = "Level Up Fitness Proj.html">Home</a>
-                <a href = "workouts.html">Workouts</a>
-                <a class ="active" href = "nutrition.html">Nutrition</a>
-                <a href = "progress.html">Progress</a>
-                <a href = "settings.html">Settings</a>
-            </div>
+            <nav class="dropdown">
+                <a href="Level Up Fitness Proj.html">Home</a>
+                <a href="workouts.html">Workouts</a>
+                <a class="active" href="nutrition.html">Nutrition</a>
+                <a href="progress.html">Progress</a>
+                <a href="personalize.html">Personalize</a>
+                <a href="settings.html">Settings</a>
+            </nav>
         </aside>
+
+        <main class="content">
+            <header class="topbar">
+                <div class="page-title">
+                    <p class="eyebrow">Support Items</p>
+                    <h1>Nutrition</h1>
+                </div>
+                <div class="hunter-card">
+                    <span id="rankBadge">E-Rank</span>
+                    <strong id="hunterName">Hunter</strong>
+                </div>
+            </header>
+
+            <section class="card-grid">
+                <form class="system-panel" id="mealForm">
+                    <div class="section-title">
+                        <p class="eyebrow">Fuel Log</p>
+                        <h2>Add Meal</h2>
+                    </div>
+                    <label>
+                        Meal
+                        <input id="mealInput" type="text" placeholder="Chicken bowl, protein shake" required>
+                    </label>
+                    <div class="form-grid two">
+                        <label>
+                            Protein
+                            <input id="proteinInput" type="number" min="0" value="30">
+                        </label>
+                        <label>
+                            Calories
+                            <input id="mealCaloriesInput" type="number" min="0" value="450">
+                        </label>
+                    </div>
+                    <button class="primary-btn" type="submit">Log Meal</button>
+                </form>
+
+                <section class="system-panel">
+                    <div class="section-title">
+                        <p class="eyebrow">Inventory</p>
+                        <h2>Meal History</h2>
+                    </div>
+                    <div class="timeline" id="mealHistory"></div>
+                </section>
+            </section>
+        </main>
     </div>
 
-    <script src = "script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
