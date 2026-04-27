@@ -1,32 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Level Up Fitness</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Level Up Fitness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-
-    <div class = "logo " id = "dashboard">
-        <img src="levelupfitnesslogo.png" alt="Level Up Fitness Logo" width="200" height="200">
-        <aside class = "sidebar">
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand-mark">LU</div>
             <h2>Settings</h2>
-            <!-- Dropdown Menu -->
-            <button class = "dropdown-btn" id = "menuBtn">
-                ☰ Menu
-            </button>
-            <div class = "dropdown" id = "menu">
-                <a href = "Level Up Fitness Proj.html">Home</a>
-                <a href = "workouts.html">Workouts</a>
-                <a href = "nutrition.html">Nutrition</a>
-                <a href = "progress.html">Progress</a>
-                <a class ="active" href = "settings.html">Settings</a>
-            </div>
+            <nav class="dropdown">
+                <a href="Level Up Fitness Proj.html">Home</a>
+                <a href="workouts.html">Workouts</a>
+                <a href="nutrition.html">Nutrition</a>
+                <a href="progress.html">Progress</a>
+                <a href="personalize.html">Personalize</a>
+                <a class="active" href="settings.html">Settings</a>
+            </nav>
         </aside>
+
+        <main class="content">
+            <header class="topbar">
+                <div class="page-title">
+                    <p class="eyebrow">System</p>
+                    <h1>Settings</h1>
+                </div>
+                <div class="hunter-card">
+                    <span id="rankBadge">E-Rank</span>
+                    <strong id="hunterName">Hunter</strong>
+                </div>
+            </header>
+
+            <section class="system-panel">
+                <div class="section-title">
+                    <p class="eyebrow">Local Save</p>
+                    <h2>Progress Storage</h2>
+                </div>
+                <p class="muted">Your XP, workouts, quests, meals, and personalization are saved in this browser.</p>
+                <div class="button-row">
+                    <button class="ghost-btn" id="resetDaily">Reset Daily Quests</button>
+                    <button class="primary-btn" id="resetAll">Reset All Progress</button>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <script src = "script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,32 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Level Up Fitness</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress | Level Up Fitness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-
-    <div class = "logo " id = "dashboard">
-        <img src="levelupfitnesslogo.png" alt="Level Up Fitness Logo" width="200" height="200">
-        <aside class = "sidebar">
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand-mark">LU</div>
             <h2>Progress</h2>
-            <!-- Dropdown Menu -->
-            <button class = "dropdown-btn" id = "menuBtn">
-                ☰ Menu
-            </button>
-            <div class = "dropdown" id = "menu">
-                <a href = "Level Up Fitness Proj.html">Home</a>
-                <a href = "workouts.html">Workouts</a>
-                <a href = "nutrition.html">Nutrition</a>
-                <a class ="active" href = "progress.html">Progress</a>
-                <a href = "settings.html">Settings</a>
-            </div>
+            <nav class="dropdown">
+                <a href="Level Up Fitness Proj.html">Home</a>
+                <a href="workouts.html">Workouts</a>
+                <a href="nutrition.html">Nutrition</a>
+                <a class="active" href="progress.html">Progress</a>
+                <a href="personalize.html">Personalize</a>
+                <a href="settings.html">Settings</a>
+            </nav>
         </aside>
+
+        <main class="content">
+            <header class="topbar">
+                <div class="page-title">
+                    <p class="eyebrow">Analysis</p>
+                    <h1>Progress</h1>
+                </div>
+                <div class="hunter-card">
+                    <span id="rankBadge">E-Rank</span>
+                    <strong id="hunterName">Hunter</strong>
+                </div>
+            </header>
+
+            <section class="metric-grid">
+                <article class="system-panel metric">
+                    <p class="muted">Total XP</p>
+                    <strong id="totalXp">0</strong>
+                </article>
+                <article class="system-panel metric">
+                    <p class="muted">Streak</p>
+                    <strong id="streakCount">0 days</strong>
+                </article>
+                <article class="system-panel metric">
+                    <p class="muted">Workouts</p>
+                    <strong id="workoutCount">0</strong>
+                </article>
+                <article class="system-panel metric">
+                    <p class="muted">Calories</p>
+                    <strong id="calorieCount">0</strong>
+                </article>
+            </section>
+
+            <section class="card-grid">
+                <article class="system-panel">
+                    <div class="section-title">
+                        <p class="eyebrow">Progress Stats</p>
+                        <h2>Training Output</h2>
+                    </div>
+                    <div class="bars" id="statBars"></div>
+                </article>
+                <article class="system-panel leaderboard">
+                    <div class="section-title">
+                        <p class="eyebrow">Global Board</p>
+                        <h2>Leaderboard</h2>
+                    </div>
+                    <ol id="leaderboard"></ol>
+                </article>
+            </section>
+
+            <section class="system-panel" style="margin-top: 14px;">
+                <div class="section-title">
+                    <p class="eyebrow">Calendar</p>
+                    <h2>This Month</h2>
+                </div>
+                <div class="calendar-grid" id="calendarGrid"></div>
+            </section>
+        </main>
     </div>
 
-    <script src = "script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>

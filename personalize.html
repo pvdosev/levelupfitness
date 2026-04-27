@@ -1,33 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Level Up Fitness</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalize | Level Up Fitness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-
-    <div class = "logo " id = "dashboard">
-        <img src="levelupfitnesslogo.png" alt="Level Up Fitness Logo" width="200" height="200">
-        <aside class = "sidebar">
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand-mark">LU</div>
             <h2>Personalize</h2>
-            <!-- Dropdown Menu -->
-            <button class = "dropdown-btn" id = "menuBtn">
-                ☰ Menu
-            </button>
-            <div class = "dropdown" id = "menu">
-                <a href = "Level Up Fitness Proj.html">Home</a>
-                <a href = "workouts.html">Workouts</a>
-                <a href = "nutrition.html">Nutrition</a>
-                <a href = "progress.html">Progress</a>
-                <a class ="active" href = "personalize.html">Personalize</a>
-                <a href = "settings.html">Settings</a>
-            </div>
+            <nav class="dropdown">
+                <a href="Level Up Fitness Proj.html">Home</a>
+                <a href="workouts.html">Workouts</a>
+                <a href="nutrition.html">Nutrition</a>
+                <a href="progress.html">Progress</a>
+                <a class="active" href="personalize.html">Personalize</a>
+                <a href="settings.html">Settings</a>
+            </nav>
         </aside>
+
+        <main class="content">
+            <header class="topbar">
+                <div class="page-title">
+                    <p class="eyebrow">Player Settings</p>
+                    <h1>Personalize</h1>
+                </div>
+                <div class="hunter-card">
+                    <span id="rankBadge">E-Rank</span>
+                    <strong id="hunterName">Hunter</strong>
+                </div>
+            </header>
+
+            <section class="system-panel">
+                <div class="section-title">
+                    <p class="eyebrow">Profile</p>
+                    <h2>Hunter Setup</h2>
+                </div>
+                <div class="form-grid two">
+                    <label>
+                        Display Name
+                        <input id="profileNameInput" type="text" maxlength="18" placeholder="Hunter">
+                    </label>
+                    <label>
+                        Goal
+                        <select id="goalInput">
+                            <option>Build Strength</option>
+                            <option>Lose Weight</option>
+                            <option>Improve Endurance</option>
+                            <option>Stay Consistent</option>
+                        </select>
+                    </label>
+                    <label>
+                        Accent
+                        <select id="accentInput">
+                            <option value="cyan">Cyan</option>
+                            <option value="violet">Violet</option>
+                            <option value="emerald">Emerald</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="button-row">
+                    <button class="primary-btn" id="saveProfile">Save Profile</button>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <script src = "script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
